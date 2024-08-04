@@ -1,7 +1,6 @@
 import { useSearch } from "../../context/search";
 import { useState } from "react";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
-import { GOOGLE_PLACES_KEY } from "../../config";
 import { sellPrices, rentPrices } from "../../helpers/priceList";
 import queryString from "query-string";
 import { useNavigate } from "react-router-dom";
@@ -52,7 +51,7 @@ export default function SearchForm() {
          <div className="flex flex-col items-center w-full">
          <div className="w-full max-w-xl">
               <GooglePlacesAutocomplete
-                        apiKey={GOOGLE_PLACES_KEY}
+                        apiKey={{ key: process.env.REACT_APP_GOOGLE_PLACES_KEY }}
                         apiOptions="au"
                         selectProps={{
                           defaultInputValue: search?.address,
