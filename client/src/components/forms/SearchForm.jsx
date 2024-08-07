@@ -51,7 +51,7 @@ export default function SearchForm() {
          <div className="flex flex-col items-center w-full">
          <div className="w-full max-w-xl">
               <GooglePlacesAutocomplete
-                        apiKey={{ key: process.env.REACT_APP_GOOGLE_PLACES_KEY }}
+                        apiKey={{ key: import.meta.env.VITE_GOOGLE_PLACES_KEY }}
                         apiOptions="au"
                         selectProps={{
                           defaultInputValue: search?.address,
